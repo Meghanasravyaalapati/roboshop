@@ -4,4 +4,4 @@ Run rm -rf /etc/nginx/nginx.conf
 Run rm -rf /etc/nginx/conf.d/default.conf
 Copy default.conf /etc/nginx/nginx.conf
 Add static /usr/share/nginx/html/
-Env CATALOGUE_HOST="catalogue"
+Env CATALOUGE_HOST="catalouge"
