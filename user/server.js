@@ -294,6 +294,9 @@ function mongoLoop() {
 }
 
 mongoLoop();
+app.get('/', (req, res) => {
+    res.send('User service is up and running!');
+});
 
 // fire it up!
 const port = process.env.USER_SERVER_PORT || '8080';
