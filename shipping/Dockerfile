@@ -5,8 +5,15 @@ FROM debian:10 AS build
 
 # RUN apt-get update && apt-get -y install maven
 RUN apt-get update && \
-    apt-get install -y curl gnupg2 && \
-    apt-get install -y maven
+    apt-get install -y curl tar openjdk-11-jdk
+
+# Set Maven version
+ENV MAVEN_VERSION=3.8.8
+
+# Download and install Maven manually
+RUN curl -fsSL https://downloads.apache.org/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz -o maven.tar.gz && \
+    tar -xzf maven.tar.gz -C /opt && \
+    ln -s /opt/apache-maven-${MAVEN_VERSION}/bin/mvn /usr/bin/mvn
 
 WORKDIR /opt/shipping
 
