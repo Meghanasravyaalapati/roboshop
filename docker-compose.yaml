@@ -23,7 +23,8 @@ services:
   user:
    image: user:v1
    container_name: user
-   network_mode: host
+   ports:
+   - "80:80"
    depends_on:
    - mongodb
    - redis
