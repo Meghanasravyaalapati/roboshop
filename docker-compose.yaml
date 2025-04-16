@@ -23,6 +23,7 @@ services:
   user:
    image: user:v1
    container_name: user
+   network_mode: host
    depends_on:
    - mongodb
    - redis
